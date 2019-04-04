@@ -1,10 +1,10 @@
 #！ /usr/bin/python3
 """
 Usage:
-  data_process.py [-i IN_FILE]
+  data_process.py [--i=IN_FILE]
 
 Options:
-  -i       input file to process
+  --i=IN_FILE       input file to process
 """
 import os
 import linecache
@@ -31,7 +31,7 @@ def get_content(path):
     
 def main():
    args = docopt(__doc__,version="1.0.0rc2")
-   filename = args["IN_FILE"] 
+   filename = args["--"] 
   
    if "/" in filename:
      filename = filename.split("/")[-1]
