@@ -15,6 +15,7 @@ def get_content(path):
   if os.path.exists(path):
     content = ""
     cache_data = linecache.getlines(path)
+    #for循环中删除自身元素目前最简练操作
     for data in cache_data[:]:
       if "=" in data or "#" in data:
         cache_data.remove(data)
