@@ -31,7 +31,7 @@ def get_content(path):
     
 def main():
    args = docopt(__doc__,version="1.0.0rc2")
-   filename = args["--"] 
+   filename = args["--i"] 
   
    if "/" in filename:
      filename = filename.split("/")[-1]
