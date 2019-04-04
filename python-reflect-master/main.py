@@ -1,7 +1,7 @@
 import pkgutil
 import importlib
 from inspect import getmembers, isclass
-
+from colorama import Fore,Back,Style
 import bar
 
 result=[]
@@ -13,3 +13,6 @@ for importer, name, ispkg in pkgutil.walk_packages(bar.__path__, "%s." % bar.__n
 
 for o in result:
 	print(o)
+	
+print(Fore.RED + "test end print color")
+print(Style.RESET_ALL)
