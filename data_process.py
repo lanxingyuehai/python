@@ -9,6 +9,7 @@ Options:
 import os
 import linecache
 import argparse
+import docopt from docopt
 
 def get_content(path):
   if os.path.exists(path):
