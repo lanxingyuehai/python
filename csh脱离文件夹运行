@@ -3,5 +3,6 @@ if("$called" != "")then
     set script_fn=`readlink -f $called[2]`
 else
     set script_fn=`readlink -f $0`
+endif
 
 set SCRIPT_DIR=`dirname $script_fn`
