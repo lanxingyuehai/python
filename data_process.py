@@ -1,3 +1,11 @@
+#！ /usr/bin/python3
+"""
+Usage:
+  data_process.py [-i IN_FILE]
+
+Options:
+  -i       input file to process
+"""
 import os
 import linecache
 import argparse
@@ -20,20 +28,13 @@ def get_content(path):
     print("file is not exist")
     
 def main():
-   parser = argparse.ArgumentParser()
-   parser.add_argument("-i",action="store",help="input file")
-   parser.add_argument("-o",action="store",help="output file")
-   args = parser.parse_args()
-   
-   inputLog = args.i
-   outputLog = args.o
-   filename = ""
-   if "/" in inputLog:
-     filename = inputLog.split("/")[-1]
-   else :
-     filename = inputLog
+   args = docopt(__doc__,version="1.0.0rc2")
+   filename = args["IN_FILE"] 
+  
+   if "/" in filename:
+     filename = filename.split("/")[-1]
      
-   newFile = open(filename,"w")
+   newFile = open(filename+".new","w")
    content = get_content(filename)
    newFile.write(content)
    
